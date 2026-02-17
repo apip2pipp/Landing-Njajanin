@@ -84,13 +84,66 @@
                         <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
                     </a>
                     <!-- Mobile Menu Button -->
-                    <button class="md:hidden p-2 text-slate-500 hover:text-primary-600">
+                    <button id="mobileMenuBtn" class="md:hidden p-2 text-slate-500 hover:text-primary-600">
                         <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
                     </button>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed inset-0 z-50 md:hidden">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" id="mobileMenuOverlay"></div>
+        <div id="mobileMenuPanel" class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl transform translate-x-0 transition-transform duration-300">
+            <div class="flex flex-col h-full">
+                <!-- Close Button -->
+                <div class="flex justify-end p-4 border-b border-slate-100">
+                    <button id="closeMobileMenu" class="p-2 text-slate-500 hover:text-primary-600 transition-colors">
+                        <iconify-icon icon="solar:close-circle-linear" width="28" height="28"></iconify-icon>
+                    </button>
+                </div>
+                
+                <!-- Menu Links -->
+                <nav class="flex-1 px-6 py-8">
+                    <div class="space-y-6">
+                        <a href="#about" class="mobile-menu-link block text-lg font-medium text-slate-700 hover:text-primary-600 transition-colors py-2">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:info-circle-linear" width="24"></iconify-icon>
+                                <span>About</span>
+                            </div>
+                        </a>
+                        <a href="#menu" class="mobile-menu-link block text-lg font-medium text-slate-700 hover:text-primary-600 transition-colors py-2">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:menu-dots-linear" width="24"></iconify-icon>
+                                <span>Menu</span>
+                            </div>
+                        </a>
+                        <a href="#reviews" class="mobile-menu-link block text-lg font-medium text-slate-700 hover:text-primary-600 transition-colors py-2">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:star-linear" width="24"></iconify-icon>
+                                <span>Reviews</span>
+                            </div>
+                        </a>
+                        <a href="#contact" class="mobile-menu-link block text-lg font-medium text-slate-700 hover:text-primary-600 transition-colors py-2">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:map-point-linear" width="24"></iconify-icon>
+                                <span>Location</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <!-- Order Button in Mobile Menu -->
+                    <div class="mt-10">
+                        <a href="https://www.instagram.com/njajan.innn/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-full font-medium text-sm transition-all shadow-lg">
+                            <span>Order Now</span>
+                            <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-white">
@@ -127,7 +180,7 @@
                             Order Now
                         </a>
                         <a href="#about" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-semibold text-base transition-all hover:shadow-md">
-                            Learn More
+                            Explore
                         </a>
                     </div>
                     
@@ -232,7 +285,7 @@
     <!-- Menu / Product Section -->
     <section id="menu" class="py-20 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
                 <div>
                     <span class="text-primary-600 font-bold tracking-wider uppercase text-sm">Our Favorites</span>
                     <h2 class="font-display font-bold text-4xl text-slate-900 mt-2">Pick Your Treat</h2>
@@ -249,9 +302,9 @@
                 <!-- Product Card: Crepes -->
                 <div class="group bg-white rounded-[2rem] p-4 sm:p-6 shadow-sm border border-slate-100 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300">
                     <div class="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1629851722830-4740f907b22a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Sweet Crepes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="gambar_Snacks/crepesGambar.png" alt="Sweet Crepes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-900">
-                            Starting from IDR 15k
+                            Starting from IDR 7k
                         </div>
                     </div>
                     <div class="px-2">
@@ -285,9 +338,9 @@
                 <!-- Product Card: Cheese Balls -->
                 <div class="group bg-white rounded-[2rem] p-4 sm:p-6 shadow-sm border border-slate-100 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300">
                     <div class="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6 bg-slate-100">
-                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Cheese Balls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="gambar_Snacks/bolakejGambar.png" alt="Cheese Balls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-900">
-                            Starting from IDR 20k
+                            Starting from IDR 7k
                         </div>
                     </div>
                     <div class="px-2">
@@ -429,8 +482,8 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg">Contact Us</h4>
-                                <p class="text-slate-400">+62 812 3456 7890</p>
-                                <p class="text-slate-400">hello@njajanin.com</p>
+                                <p class="text-slate-400">+62 BRAPA YAA</p>
+                                <p class="text-slate-400">masihbelumadaemail@njajanin.com</p>
                             </div>
                         </div>
                     </div>
@@ -467,7 +520,7 @@
                 <img src="logo/logo1.png" alt="Njajan.innn Logo" class="h-8">
                 <span class="font-display font-bold text-xl text-white">Njajan.innn</span>
             </div>
-            <p class="text-slate-500 text-sm">© 2024 Njajan.innn. All rights reserved.</p>
+            <p class="text-slate-500 text-sm">© 2026 Njajan.innn. All rights reserved.</p>
         </div>
     </section>
 
@@ -490,6 +543,37 @@
             } else {
                 nav.classList.remove('shadow-md');
             }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuPanel = document.getElementById('mobileMenuPanel');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuPanel.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenuPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+        
+        // Close mobile menu when clicking a link
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenuFunc);
         });
     </script>
 
