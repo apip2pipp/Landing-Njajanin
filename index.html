@@ -1,0 +1,496 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Njajan.innn | Sweet Crepes &amp; Korean Cheese Balls</title>
+    <link rel="icon" type="image/png" href="logo/iconweb.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6', // Soft Royal Blue
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #eff6ff; }
+        ::-webkit-scrollbar-thumb { background: #bfdbfe; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #93c5fd; }
+        
+        .blob {
+            position: absolute;
+            filter: blur(40px);
+            z-index: -1;
+            opacity: 0.5;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-600 antialiased selection:bg-primary-100 selection:text-primary-700 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-primary-100/50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <img src="logo/logo1.png" alt="Njajan.innn Logo" class="h-10 transition-transform group-hover:scale-105">
+                    <span class="font-display font-bold text-2xl text-primary-600 tracking-tight">Njajan.innn</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors">About</a>
+                    <a href="#menu" class="text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors">Menu</a>
+                    <a href="#reviews" class="text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors">Reviews</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-500 hover:text-primary-600 transition-colors">Location</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="flex items-center gap-4">
+                    <a href="https://www.instagram.com/njajan.innn/" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-6 py-2.5 rounded-full font-medium text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary-200">
+                        <span>Order Now</span>
+                        <iconify-icon icon="solar:arrow-right-linear" width="18"></iconify-icon>
+                    </a>
+                    <!-- Mobile Menu Button -->
+                    <button class="md:hidden p-2 text-slate-500 hover:text-primary-600">
+                        <iconify-icon icon="solar:hamburger-menu-linear" width="24" height="24"></iconify-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-br from-primary-50 via-white to-white">
+        <!-- Floating Shapes -->
+        <div class="blob bg-blue-200 w-96 h-96 rounded-full top-0 -left-20"></div>
+        <div class="blob bg-indigo-100 w-80 h-80 rounded-full bottom-0 right-0 animation-delay-2000"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+                
+                <!-- Text Content -->
+                <div class="text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-primary-100 shadow-sm mb-8 animate-fade-in-up">
+                        <iconify-icon icon="solar:confetti-minimalistic-linear" class="text-primary-500 text-lg"></iconify-icon>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-primary-600">Taste the Happiness</span>
+                    </div>
+                    
+                    <h1 class="font-display font-bold text-5xl sm:text-6xl lg:text-7xl text-slate-900 leading-[1.1] tracking-tight mb-6">
+                        Njajan.innn Aja <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-blue-400">Disiniii</span>
+                    </h1>
+                    
+                    <p class="font-display text-xl sm:text-2xl text-slate-500 mb-8 font-medium">
+                        Cobaain dulu deh.
+                    </p>
+                    
+                    <p class="text-slate-500 text-lg mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                        Crispy sweet crepes and melting Korean cheese balls. The perfect snack companion for your day.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="https://www.instagram.com/njajan.innn/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold text-base transition-all transform hover:-translate-y-1 shadow-xl shadow-primary-200">
+                            <iconify-icon icon="solar:cart-large-linear" width="20"></iconify-icon>
+                            Order Now
+                        </a>
+                        <a href="#about" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-8 py-4 rounded-full font-semibold text-base transition-all hover:shadow-md">
+                            Learn More
+                        </a>
+                    </div>
+                    
+                    <!-- Quick Stats -->
+                    <div class="mt-12 pt-8 border-t border-slate-100 flex justify-center lg:justify-start gap-8 sm:gap-12">
+                        <div>
+                            <p class="font-display font-bold text-2xl text-slate-900">10k+</p>
+                            <p class="text-sm text-slate-500">Happy Tummies</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-bold text-2xl text-slate-900">4.9</p>
+                            <p class="text-sm text-slate-500">Rating</p>
+                        </div>
+                        <div>
+                            <p class="font-display font-bold text-2xl text-slate-900">100%</p>
+                            <p class="text-sm text-slate-500">Halal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="relative lg:h-[600px] flex items-center justify-center">
+                    <div class="relative w-full max-w-md aspect-[4/5] mx-auto">
+                        <!-- Decorative shapes behind -->
+                        <div class="absolute inset-0 bg-primary-100 rounded-[2.5rem] rotate-6 transform transition-transform hover:rotate-3"></div>
+                        <div class="absolute inset-0 bg-primary-50 rounded-[2.5rem] -rotate-3 transform transition-transform hover:-rotate-1"></div>
+                        
+                        <!-- Main Image -->
+                        <div class="absolute inset-2 bg-white rounded-[2rem] overflow-hidden shadow-2xl shadow-primary-900/10 border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Delicious Crepes" class="w-full h-full object-cover">
+                            
+                            <!-- Floating Badge -->
+                            <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-primary-50 max-w-[180px]">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-500">
+                                        <iconify-icon icon="solar:fire-linear" width="20"></iconify-icon>
+                                    </div>
+                                    <span class="font-bold text-slate-900 text-sm">Best Seller</span>
+                                </div>
+                                <p class="text-xs text-slate-500">Choco Cheese Crepe</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Section (Ticker) -->
+    <div class="bg-primary-600 py-6 overflow-hidden transform -skew-y-1 origin-bottom-right shadow-inner">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-12 md:gap-20 text-white/90 font-display font-bold text-lg sm:text-xl tracking-wide uppercase transform skew-y-1">
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:stars-linear"></iconify-icon> Crispy</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:heart-linear"></iconify-icon> Cheesy</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:wallet-money-linear"></iconify-icon> Affordable</span>
+                <span class="flex items-center gap-2"><iconify-icon icon="solar:chef-hat-linear"></iconify-icon> Freshly Made</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="font-display font-bold text-3xl sm:text-4xl text-slate-900 mb-6">More Than Just A Snack</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Njajan.innn starts from a simple idea: bringing joy through simple, affordable, and high-quality snacks. Whether you are craving something sweet or savory, we craft every order with love and premium ingredients. Fun vibes, serious taste!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-primary-50 rounded-3xl p-8 text-center hover:bg-white hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300 border border-transparent hover:border-primary-100">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl flex items-center justify-center text-primary-600 shadow-sm mb-6">
+                        <iconify-icon icon="solar:emoji-funny-circle-linear" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Fun &amp; Friendly</h3>
+                    <p class="text-slate-500">We believe snacking should be a happy experience. Come say hi!</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-primary-50 rounded-3xl p-8 text-center hover:bg-white hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300 border border-transparent hover:border-primary-100">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl flex items-center justify-center text-primary-600 shadow-sm mb-6">
+                        <iconify-icon icon="solar:tag-price-linear" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Pocket Friendly</h3>
+                    <p class="text-slate-500">Premium taste doesn't have to be expensive. Prices that make you smile.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-primary-50 rounded-3xl p-8 text-center hover:bg-white hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300 border border-transparent hover:border-primary-100">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-2xl flex items-center justify-center text-primary-600 shadow-sm mb-6">
+                        <iconify-icon icon="solar:verified-check-linear" width="32"></iconify-icon>
+                    </div>
+                    <h3 class="font-display font-bold text-xl text-slate-900 mb-3">Quality First</h3>
+                    <p class="text-slate-500">Fresh dough, real cheese, and premium toppings every single day.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu / Product Section -->
+    <section id="menu" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                <div>
+                    <span class="text-primary-600 font-bold tracking-wider uppercase text-sm">Our Favorites</span>
+                    <h2 class="font-display font-bold text-4xl text-slate-900 mt-2">Pick Your Treat</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button class="px-6 py-2 rounded-full bg-primary-600 text-white font-medium shadow-md">All</button>
+                    <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-medium hover:bg-primary-50 transition-colors border border-slate-200">Sweet</button>
+                    <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-medium hover:bg-primary-50 transition-colors border border-slate-200">Savory</button>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-10">
+                
+                <!-- Product Card: Crepes -->
+                <div class="group bg-white rounded-[2rem] p-4 sm:p-6 shadow-sm border border-slate-100 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300">
+                    <div class="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1629851722830-4740f907b22a?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Sweet Crepes" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-900">
+                            Starting from IDR 15k
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display font-bold text-2xl text-slate-900">Sweet Crepes</h3>
+                            <iconify-icon icon="solar:arrow-right-up-linear" class="text-slate-300 group-hover:text-primary-600 transition-colors text-2xl"></iconify-icon>
+                        </div>
+                        <p class="text-slate-500 mb-6">Thin, crispy, and loaded with your favorite toppings. The perfect sweet crunch.</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:star-fall-linear" class="text-primary-500"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Choco Crunchy</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:tea-cup-linear" class="text-green-500"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Matcha Lover</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:cup-linear" class="text-amber-700"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Classic Tiramisu</span>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all">
+                            View Flavors
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card: Cheese Balls -->
+                <div class="group bg-white rounded-[2rem] p-4 sm:p-6 shadow-sm border border-slate-100 hover:border-primary-200 hover:shadow-xl hover:shadow-primary-900/5 transition-all duration-300">
+                    <div class="relative aspect-video rounded-[1.5rem] overflow-hidden mb-6 bg-slate-100">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Cheese Balls" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-slate-900">
+                            Starting from IDR 20k
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-display font-bold text-2xl text-slate-900">Korean Cheese Balls</h3>
+                            <iconify-icon icon="solar:arrow-right-up-linear" class="text-slate-300 group-hover:text-primary-600 transition-colors text-2xl"></iconify-icon>
+                        </div>
+                        <p class="text-slate-500 mb-6">Golden crispy outside, warm melting mozzarella inside. Addictive savory bites.</p>
+                        
+                        <div class="space-y-3 mb-8">
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:fire-linear" class="text-orange-500"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Spicy Mayo</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:bomb-emoji-linear" class="text-slate-900"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Original Truffle</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <iconify-icon icon="solar:cloud-linear" class="text-primary-500"></iconify-icon>
+                                <span class="text-sm font-medium text-slate-700">Sweet Snow Sugar</span>
+                            </div>
+                        </div>
+
+                        <button class="w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all">
+                            View Flavors
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background blob -->
+        <div class="blob bg-primary-100 w-full h-96 top-20 left-0 opacity-30"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-primary-600 font-bold tracking-wider uppercase text-sm">Testimonials</span>
+                <h2 class="font-display font-bold text-4xl text-slate-900 mt-2">People Love Njajan.innn</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-50">
+                    <div class="flex text-yellow-400 mb-4 gap-1">
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"The cheese balls are literally life changing! So stretchy and the outer crust is perfectly crispy. Must try!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center text-primary-700 font-bold">A</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Sarah Amalia</p>
+                            <p class="text-xs text-slate-400">Cheese Lover</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-50 relative">
+                    <div class="flex text-yellow-400 mb-4 gap-1">
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Enak banget crepes nya! Toppingnya ga pelit, harganya affordable buat mahasiswa. Suka banget!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center text-indigo-700 font-bold">R</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Rizky Pratama</p>
+                            <p class="text-xs text-slate-400">Student</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-50">
+                    <div class="flex text-yellow-400 mb-4 gap-1">
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-bold"></iconify-icon>
+                        <iconify-icon icon="solar:star-linear"></iconify-icon>
+                    </div>
+                    <p class="text-slate-600 mb-6 italic">"Perfect snack for hanging out. The packaging is cute and clean. Definitely ordering again."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center text-orange-700 font-bold">D</div>
+                        <div>
+                            <p class="font-bold text-slate-900 text-sm">Dina Kusuma</p>
+                            <p class="text-xs text-slate-400">Foodie</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contact" class="py-20 lg:py-32 bg-slate-900 text-white rounded-t-[3rem] mt-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="font-display font-bold text-4xl mb-6">Come Visit Us!</h2>
+                    <p class="text-slate-400 text-lg mb-10">We are open everyday to serve your sweet and savory cravings. Come hang out or order online.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-800 rounded-xl text-primary-400">
+                                <iconify-icon icon="solar:map-point-linear" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Our Location</h4>
+                                <p class="text-slate-400">Taman Krida Budaya Jawa Timur<br>Jl. Soekarno Hatta No.7, Jatimulyo<br>Kec. Lowokwaru, Kota Malang, Jawa Timur 65142</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-800 rounded-xl text-primary-400">
+                                <iconify-icon icon="solar:clock-circle-linear" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Opening Hours</h4>
+                                <p class="text-slate-400">Mon - Sun: 10:00 AM - 10:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 bg-slate-800 rounded-xl text-primary-400">
+                                <iconify-icon icon="solar:phone-calling-linear" width="24"></iconify-icon>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Contact Us</h4>
+                                <p class="text-slate-400">+62 812 3456 7890</p>
+                                <p class="text-slate-400">hello@njajanin.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex gap-4">
+                        <a href="https://www.instagram.com/njajan.innn/" target="_blank" rel="noopener noreferrer" class="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-all">
+                            <iconify-icon icon="ri:instagram-line" width="24"></iconify-icon>
+                        </a>
+                        <a href="https://tiktok.com/@njajanin" target="_blank" rel="noopener noreferrer" class="p-3 bg-white text-slate-900 rounded-full hover:bg-primary-500 hover:text-white transition-all">
+                            <iconify-icon icon="ic:baseline-tiktok" width="24"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="h-96 w-full rounded-3xl overflow-hidden relative border border-slate-700 shadow-xl">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Taman+Krida+Budaya+Jawa+Timur+Jl.+Soekarno+Hatta+No.7+Jatimulyo+Lowokwaru+Malang&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        class="grayscale hover:grayscale-0 transition-all duration-300">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <img src="logo/logo1.png" alt="Njajan.innn Logo" class="h-8">
+                <span class="font-display font-bold text-xl text-white">Njajan.innn</span>
+            </div>
+            <p class="text-slate-500 text-sm">© 2024 Njajan.innn. All rights reserved.</p>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+
+</body></html>
