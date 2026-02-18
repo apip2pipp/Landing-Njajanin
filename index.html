@@ -55,6 +55,35 @@
             66% { transform: translate(-20px, 20px) scale(0.9); }
             100% { transform: translate(0, 0) scale(1); }
         }
+
+        /* Modal Styles */
+        .modal-backdrop {
+            backdrop-filter: blur(4px);
+            transition: opacity 300ms ease-in-out;
+        }
+        
+        .modal-container {
+            animation: modalFadeIn 300ms ease-out;
+        }
+        
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        
+        .flavor-card {
+            transition: all 300ms ease;
+        }
+        
+        .flavor-card:hover {
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 <body class="font-sans text-slate-600 antialiased selection:bg-primary-100 selection:text-primary-700 bg-white">
@@ -210,7 +239,7 @@
                         
                         <!-- Main Image -->
                         <div class="absolute inset-2 bg-white rounded-[2rem] overflow-hidden shadow-2xl shadow-primary-900/10 border-4 border-white">
-                            <img src="https://images.unsplash.com/photo-1519340333755-56e9c1d04579?q=80&amp;w=1000&amp;auto=format&amp;fit=crop" alt="Delicious Crepes" class="w-full h-full object-cover">
+                            <img src="gambar_Snacks/BestSeller.png" alt="Delicious Crepes" class="w-full h-full object-cover">
                             
                             <!-- Floating Badge -->
                             <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-lg border border-primary-50 max-w-[180px]">
@@ -220,7 +249,7 @@
                                     </div>
                                     <span class="font-bold text-slate-900 text-sm">Best Seller</span>
                                 </div>
-                                <p class="text-xs text-slate-500">Choco Cheese Crepe</p>
+                                <p class="text-xs text-slate-500">Korean Cheese Ball</p>
                             </div>
                         </div>
                     </div>
@@ -290,11 +319,6 @@
                     <span class="text-primary-600 font-bold tracking-wider uppercase text-sm">Our Favorites</span>
                     <h2 class="font-display font-bold text-4xl text-slate-900 mt-2">Pick Your Treat</h2>
                 </div>
-                <div class="flex gap-2">
-                    <button class="px-6 py-2 rounded-full bg-primary-600 text-white font-medium shadow-md">All</button>
-                    <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-medium hover:bg-primary-50 transition-colors border border-slate-200">Sweet</button>
-                    <button class="px-6 py-2 rounded-full bg-white text-slate-600 font-medium hover:bg-primary-50 transition-colors border border-slate-200">Savory</button>
-                </div>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-10">
@@ -329,7 +353,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all">
+                        <button class="flavor-modal-btn w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all" data-product="crepes">
                             View Flavors
                         </button>
                     </div>
@@ -353,7 +377,7 @@
                         <div class="space-y-3 mb-8">
                             <div class="flex items-center gap-3">
                                 <iconify-icon icon="solar:fire-linear" class="text-orange-500"></iconify-icon>
-                                <span class="text-sm font-medium text-slate-700">Spicy Mayo</span>
+                                <span class="text-sm font-medium text-slate-700">Spicy</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <iconify-icon icon="solar:bomb-emoji-linear" class="text-slate-900"></iconify-icon>
@@ -365,7 +389,7 @@
                             </div>
                         </div>
 
-                        <button class="w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all">
+                        <button class="flavor-modal-btn w-full py-3 rounded-xl border border-primary-600 text-primary-600 font-semibold hover:bg-primary-600 hover:text-white transition-all" data-product="cheese-balls">
                             View Flavors
                         </button>
                     </div>
@@ -472,7 +496,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-lg">Opening Hours</h4>
-                                <p class="text-slate-400">Mon - Sun: 10:00 AM - 10:00 PM</p>
+                                <p class="text-slate-400">Senin - Minggu : 15:00 SORE - 6:00 SORE</p>
                             </div>
                         </div>
 
@@ -524,6 +548,149 @@
         </div>
     </section>
 
+    <!-- Flavor Modal -->
+    <div id="flavorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <!-- Backdrop -->
+        <div class="modal-backdrop absolute inset-0 bg-black/50" id="modalBackdrop"></div>
+        
+        <!-- Modal Container -->
+        <div class="modal-container relative bg-white rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <!-- Close Button -->
+            <button id="closeModalBtn" class="absolute top-6 right-6 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 hover:bg-slate-200 transition-colors text-slate-600 hover:text-slate-900">
+                <iconify-icon icon="solar:close-circle-linear" width="24"></iconify-icon>
+            </button>
+            
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-br from-primary-600 to-primary-700 px-8 py-8 text-white">
+                <h2 id="modalTitle" class="font-display font-bold text-3xl mb-2">Sweet Crepes Flavors</h2>
+                <p id="modalSubtitle" class="text-primary-100">Pick your favorite flavor combination</p>
+            </div>
+            
+            <!-- Modal Content -->
+            <div class="overflow-y-auto" style="max-height: calc(90vh - 180px);">
+                <!-- Sweet Crepes Content -->
+                <div id="content-crepes" class="product-content p-8">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Choco Crunchy -->
+                        <div class="flavor-card bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 border-2 border-amber-100 hover:border-amber-300 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:star-fall-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Choco Crunchy</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Rich chocolate with crispy toppings for that perfect crunch</p>
+                            <div class="flex items-center justify-center gap-1 text-amber-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Matcha Lover -->
+                        <div class="flavor-card bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 border-2 border-green-100 hover:border-green-300 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:tea-cup-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Matcha Lover</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Premium Japanese matcha with smooth cream filling</p>
+                            <div class="flex items-center justify-center gap-1 text-green-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Classic Tiramisu -->
+                        <div class="flavor-card bg-gradient-to-br from-amber-50 to-yellow-50 rounded-2xl p-6 border-2 border-amber-100 hover:border-amber-300 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-amber-600 to-yellow-700 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:cup-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Classic Tiramisu</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Coffee-infused Italian classic with mascarpone cream</p>
+                            <div class="flex items-center justify-center gap-1 text-amber-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="https://instagram.com/njajan.innn" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">
+                            <iconify-icon icon="solar:cart-large-2-linear" width="20"></iconify-icon>
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Korean Cheese Balls Content -->
+                <div id="content-cheese-balls" class="product-content p-8 hidden">
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <!-- Spicy Mayo -->
+                        <div class="flavor-card bg-gradient-to-br from-orange-50 to-red-50 rounded-2xl p-6 border-2 border-orange-100 hover:border-orange-300 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-orange-400 to-red-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:fire-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Spicy</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Fiery kick with Flavor balance - perfect heat level</p>
+                            <div class="flex items-center justify-center gap-1 text-orange-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Original Truffle -->
+                        <div class="flavor-card bg-gradient-to-br from-slate-50 to-gray-50 rounded-2xl p-6 border-2 border-slate-200 hover:border-slate-400 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-slate-700 to-slate-900 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:bomb-emoji-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Original Truffle</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Luxurious truffle oil with premium cheese - pure indulgence</p>
+                            <div class="flex items-center justify-center gap-1 text-slate-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                        
+                        <!-- Sweet Snow Sugar -->
+                        <div class="flavor-card bg-gradient-to-br from-blue-50 to-sky-50 rounded-2xl p-6 border-2 border-blue-100 hover:border-blue-300 hover:shadow-xl">
+                            <div class="w-20 h-20 mx-auto mb-4 bg-gradient-to-br from-blue-400 to-sky-500 rounded-2xl flex items-center justify-center shadow-lg">
+                                <iconify-icon icon="solar:cloud-linear" width="40" class="text-white"></iconify-icon>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-900 text-center mb-2">Sweet Snow Sugar</h3>
+                            <p class="text-slate-600 text-sm text-center mb-4">Delicate sweet coating with savory cheese - best of both worlds</p>
+                            <div class="flex items-center justify-center gap-1 text-blue-600">
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                                <iconify-icon icon="solar:star-bold" width="16"></iconify-icon>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 text-center">
+                        <a href="https://instagram.com/njajan.innn" target="_blank" class="inline-flex items-center gap-2 px-8 py-3 bg-primary-600 text-white font-semibold rounded-xl hover:bg-primary-700 transition-all shadow-lg hover:shadow-xl">
+                            <iconify-icon icon="solar:cart-large-2-linear" width="20"></iconify-icon>
+                            Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -574,6 +741,75 @@
         // Close mobile menu when clicking a link
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', closeMobileMenuFunc);
+        });
+
+        // Flavor Modal Functionality
+        const flavorModal = document.getElementById('flavorModal');
+        const modalBackdrop = document.getElementById('modalBackdrop');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const flavorModalBtns = document.querySelectorAll('.flavor-modal-btn');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const productContents = document.querySelectorAll('.product-content');
+
+        // Product data
+        const productData = {
+            'crepes': {
+                title: 'Sweet Crepes Flavors',
+                subtitle: 'Thin, crispy, and loaded with your favorite toppings'
+            },
+            'cheese-balls': {
+                title: 'Korean Cheese Balls Flavors',
+                subtitle: 'Golden crispy outside, warm melting mozzarella inside'
+            }
+        };
+
+        // Open modal
+        function openFlavorModal(productType = 'crepes') {
+            // Update modal header
+            const product = productData[productType];
+            if (product) {
+                modalTitle.textContent = product.title;
+                modalSubtitle.textContent = product.subtitle;
+            }
+
+            // Show only the selected product content
+            productContents.forEach(content => {
+                if (content.id === `content-${productType}`) {
+                    content.classList.remove('hidden');
+                } else {
+                    content.classList.add('hidden');
+                }
+            });
+
+            // Show modal
+            flavorModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close modal
+        function closeFlavorModal() {
+            flavorModal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        // Event listeners for opening modal
+        flavorModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const productType = btn.dataset.product || 'crepes';
+                openFlavorModal(productType);
+            });
+        });
+
+        // Event listeners for closing modal
+        closeModalBtn.addEventListener('click', closeFlavorModal);
+        modalBackdrop.addEventListener('click', closeFlavorModal);
+
+        // ESC key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !flavorModal.classList.contains('hidden')) {
+                closeFlavorModal();
+            }
         });
     </script>
 
